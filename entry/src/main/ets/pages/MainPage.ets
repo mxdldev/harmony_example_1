@@ -50,7 +50,7 @@ struct MainPage {
       Image(this.selectIndex == selectIndex ? tabItem.imageActivated : tabItem.imageOriginal)
         .width('21vp')
         .height('21vp')
-        .margin({top:'5vp',bottom:'5vp'})
+        .margin({top:'5vp',bottom:'6vp'})
       Text(tabItem.title)
         .width('100%')
         .height('14vp')
