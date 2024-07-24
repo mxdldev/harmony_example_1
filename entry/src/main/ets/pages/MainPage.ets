@@ -1,4 +1,5 @@
 import { TabItem } from '../model/TabItem'
+import { HomePage } from './home/HomePage'
 
 @Entry
 @Component
@@ -8,12 +9,15 @@ struct MainPage {
   build() {
     Column() {
       Tabs({ index: this.selectIndex, barPosition: BarPosition.End }) {
-        TabContent().tabBar(this.TabBottom({
+        TabContent() {
+          HomePage()
+        }.tabBar(this.TabBottom({
           index: 0,
           title: "首页",
           imageActivated: $r('app.media.icon_sel_home'),
           imageOriginal: $r('app.media.icon_unsel_home')
         }, 0)).width("100%").height("100%")
+
         TabContent().tabBar(this.TabBottom({
           index: 1,
           title: "发现",
@@ -50,7 +54,7 @@ struct MainPage {
       Image(this.selectIndex == selectIndex ? tabItem.imageActivated : tabItem.imageOriginal)
         .width('21vp')
         .height('21vp')
-        .margin({top:'5vp',bottom:'6vp'})
+        .margin({ top: '5vp', bottom: '6vp' })
       Text(tabItem.title)
         .width('100%')
         .height('14vp')
